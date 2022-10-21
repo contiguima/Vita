@@ -6,8 +6,8 @@ import { useAuth } from "../../context/authContext";
 import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
-function LoginPaciente() {
-    const {login} = useAuth();
+function RegistrarMedicos() {
+    const {signup} = useAuth();
     const [user, setUser] = useState(
         { 
             email: "",
@@ -26,7 +26,7 @@ function LoginPaciente() {
         e.preventDefault();
         setError(" ");
         try {
-            await login(user.email,user.password);
+            await signup(user.email,user.password);
             navigate("/HomePacientes");
         } catch (error) {
             setError(error.message);
@@ -46,6 +46,7 @@ function LoginPaciente() {
     <div className="parent">
     <div className="textosUsuario">
         
+
 
     </div>
     <div className="formRegistro">
@@ -67,7 +68,7 @@ function LoginPaciente() {
                 placeholder="******"
                 onChange={handleChange}/>
 
-            <button>Login</button>
+            <button>Registrarse</button>
         </form>
     </div>
     </div>
@@ -75,5 +76,5 @@ function LoginPaciente() {
     </>
 }
 
-export default LoginPaciente;
+export default RegistrarMedicos;
 

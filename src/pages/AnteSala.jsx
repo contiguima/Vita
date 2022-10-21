@@ -1,6 +1,7 @@
 import React from "react";
 import "../stylesheets/AnteSala.css";
 import logopng from "../imagenes/logovita.png";
+import { NavLink } from "react-router-dom";
 function AnteSala()
 {
     return(
@@ -13,10 +14,7 @@ function AnteSala()
         
         <div className="contenedor-botones">
         <button> Soy médico</button>
-        <button 
-        className="redirigirPaciente"
-        //</div>onClick={}
-        > Soy paciente</button>
+        <button><NavLink to ="/RegistrarPaciente"><span>Soy paciente<span/></span></NavLink></button>
             </div></>
     )
 }
