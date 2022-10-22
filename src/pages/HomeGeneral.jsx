@@ -1,6 +1,16 @@
-
+import  promos  from "../imagenes/home/promos.png";
+import "../stylesheets/HomeGeneral.css";
 function HomePrevioPacientes() {
-    return<><h1>Hola esta es la HomePrevia</h1></>
+    return<>
+    <div className="promos">
+    <img
+        className="imagenpromos"
+        alt="promociones"
+        src={promos}
+    />
+
+    </div>
+    </>
 }
 
 export default HomePrevioPacientes;
