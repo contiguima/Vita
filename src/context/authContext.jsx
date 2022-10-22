@@ -4,6 +4,8 @@ import {
     signInWithEmailAndPassword,
     onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const authContext = createContext();
 
@@ -15,13 +17,39 @@ export const useAuth = () => {
 
 export function AuthProvider({ children }) {
     
-    const user = {
-        login: true,
-    };
+    const [user, setUser] = useState(false);
+    const [userData, setUserData] = useState({});
+    const navigate = useNavigate();
+    
+  
+    useEffect(() => {
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          setUser(true);
+          setUserData({
+            email: user.email,
+            uid: user.uid,
+            displayName: user.displayName,
+            photoURL: user.photoURL,
+          });
+        } else {
+          setUser(false);
+          setUserData({});
+        }
+      });
+    }, [user]);
 
     const signup = (email, password) =>
     {
-        createUserWithEmailAndPassword(auth, email, password);
+
+        try {
+            createUserWithEmailAndPassword(auth, email, password);
+            navigate("/Pacientes/Home");
+            
+        } catch (error) {
+            alert(error.message);
+            
+        }
     };
 
     const login = async (email, password) =>{ signInWithEmailAndPassword(auth, email, password)
@@ -31,7 +59,7 @@ export function AuthProvider({ children }) {
         console.log("AuthProvider loaded")
     } , [ ]  )
     return(
-        <authContext.Provider value = {{ signup, login }}>{children}</authContext.Provider>
+        <authContext.Provider value = {{ signup, login, user }}>{children}</authContext.Provider>
     )
     
 };

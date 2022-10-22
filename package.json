@@ -9,11 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "bootstrap": "^5.2.2",
     "firebase": "^9.12.1",
+    "formik": "^2.2.9",
+    "formit": "^0.0.2",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.2",
-    "router-dom": "^2.2.9"
+    "router-dom": "^2.2.9",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",

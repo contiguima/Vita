@@ -27,7 +27,7 @@ function LoginPaciente() {
         setError(" ");
         try {
             await login(user.email,user.password);
-            navigate("/HomePacientes");
+            navigate("/Pacientes/HomePacientes");
         } catch (error) {
             setError(error.message);
             
