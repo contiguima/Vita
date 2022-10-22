@@ -1,6 +1,5 @@
 import logopng from "../../imagenes/logovita.png";
 import "../../stylesheets/RegistroPaciente.css";
-import fotoregistro from "../../imagenes/pacientes/fotoregistro.png";
 import { useState } from "react";
 import { useAuth } from "../../context/authContext";
 import { useNavigate } from "react-router-dom";
@@ -27,7 +26,7 @@ function RegistrarMedicos() {
         setError(" ");
         try {
             await signup(user.email,user.password);
-            navigate("/HomePacientes");
+            navigate("/Medicos/Home");
         } catch (error) {
             setError(error.message);
             

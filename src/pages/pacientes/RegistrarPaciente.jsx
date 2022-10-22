@@ -27,7 +27,7 @@ function RegistrarPaciente() {
         setError(" ");
         try {
             await signup(user.email,user.password);
-            navigate("/HomePacientes");
+            navigate("/Pacientes/Home");
         } catch (error) {
             setError(error.message);
             
@@ -45,7 +45,7 @@ function RegistrarPaciente() {
     </div>
     <div className="parent">
     <div className="textosUsuario">
-        <button><NavLink to ="/RegistrarMedicos">¿Sos prestador de salud?</NavLink></button> 
+        <button><NavLink to ="/Medicos/Registro">¿Sos prestador de salud?</NavLink></button> 
         <img 
             className="foto-registro" 
             src={fotoregistro}

@@ -9,12 +9,12 @@ import {
   NavLink
 
 } from "react-router-dom";
-import LoginPacientes from "./pages/autenticaciones/LoginPacientes";
-import HomePacientes from "./pages/homes/HomePacientes";
-import RegistrarPaciente from "./pages/autenticaciones/RegistrarPaciente";
+import LoginPacientes from "./pages/pacientes/LoginPacientes";
+import HomePacientes from "./pages/pacientes/HomePacientes";
+import RegistrarPaciente from "./pages/pacientes/RegistrarPaciente";
 import {AuthProvider} from "./context/authContext";
-import HomeGeneral from "./pages/homes/HomeGeneral";
-import RegistrarMedicos from "./pages/autenticaciones/RegistrarMedicos";
+import HomeGeneral from "./pages/HomeGeneral";
+import RegistrarMedicos from "./pages/medicos/RegistrarMedicos";
 
 
 
@@ -30,11 +30,11 @@ function App() {
         <Routes>
          <Route path="/" element={ <HomeGeneral />}/>
           <Route path="*" element={<>NOT FOUND</>}/>
-          <Route path="LoginPacientes" element={<LoginPacientes/>}/>
-          <Route path="HomePacientes" element={<HomePacientes/>}/>
-          <Route path="RegistrarPaciente" element={<RegistrarPaciente/>}/>
-          <Route path="Antesala" element={ <AnteSala />}/>
-          <Route path="RegistrarMedicos" element={<RegistrarMedicos/>}/>
+          <Route path="Pacientes/Login" element={<LoginPacientes/>}/>
+          <Route path="Pacientes/Home" element={<HomePacientes/>}/>
+          <Route path="Pacientes/Registro" element={<RegistrarPaciente/>}/>
+          <Route path="Registro" element={ <AnteSala />}/>
+          <Route path="Medicos/Registro" element={<RegistrarMedicos/>}/>
         
         </Routes>
         </AuthProvider>
