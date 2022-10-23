@@ -1,8 +1,147 @@
 .imagenpromos{
     max-height: 200px;
-    min-width: 100px;
+    width: 100%;
     align-items: center;
     justify-content: center;
     text-align: center;
     
+        
 }
+
+*{
+    margin:0px;
+    padding:0px;
+    border:0px;
+
+
+}
+
+
+.motorBusqueda{
+    max-height: 500px;
+    width: 100%;
+    background-color: #3e8fda;
+    padding-top:80px;
+    padding-bottom: 60px;
+    align-content: center;
+    justify-content: center;    
+}
+.motorBusqueda span{
+   color:bisque; 
+}
+.motorBusqueda h1
+{
+   color: white;
+   text-align: center;
+   font-size: 24px;
+   padding-left: 35px;
+   padding-right: 35px;  
+   text-decoration: solid;  
+}
+
+.motorBusqueda input
+{
+    margin: 20px;
+    padding: 10px;
+    width: 70%; 
+    background-color: azure;
+ }
+
+ .botonera {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 0.3fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 0px;
+    }
+.botonera button
+{
+    background-color: azure;
+    color: black;
+}
+.botonera button:hover
+{
+    background-color: rgb(212, 212, 212);
+}
+
+.comunidadVita{
+    width: 100%;
+    align-content: center;
+    justify-content: center;      
+}
+
+.comunidadTitulo{
+    background-color: #3e8fda;
+    padding:20px;
+    color:azure;
+}
+.introComunidad {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 0.6fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 0px;
+    margin:20px;
+}
+.introComunidad h2{
+    font-size: 20px;
+    line-height: 30px;
+    padding-top: 150px;
+
+}
+
+.introComunidad span{
+    color:#3e8fda;
+}
+.introComunidad img{
+   height: 400px;
+}
+.lineaAzul{
+    background-color: #3e8fda;
+    height: 5px;
+    width:100%;
+    opacity: 30%;
+ }
+
+ .temas
+ {
+    text-align: left;
+    padding: 20px;
+    font-size: 30px;
+    color:#3e8fda;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ }
+
+.verMas
+ {
+    text-align: left;
+    padding: 10px;
+    font-size: 20px;
+    color:#3e8fda;
+ }
+
+ .subscripcion
+ {
+    background-color: #3e8fda9f;
+    color: black;
+    width:100%;
+    height: 200px;
+ }
+ .subscripcion h1
+ {
+    align-items: center;
+    text-align: center;
+    padding-top:30px;
+    font-size: 20px;
+    color: black;
+ }
+
+ .input-subscripcion
+ {
+    padding:10px;
+    border-radius: 30px;
+    width:60%;
+ }
+
+
+

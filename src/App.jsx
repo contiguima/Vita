@@ -17,6 +17,7 @@ import HomeGeneral from "./pages/HomeGeneral";
 import RegistrarMedicos from "./pages/medicos/RegistrarMedicos";
 import LayaoutRequireAuth  from './components/Layaout/LayaoutRequireAuth';"./components/Layaout/LayaoutRequireAuth";
 import NavbarPacientes from './components/NavbarPacientes';
+import { VerificacionMedicos } from './pages/medicos/VerificacionMedicos';
 
 
 
@@ -40,6 +41,7 @@ function App() {
           <Route path="Pacientes/Registro" element={<RegistrarPaciente/>}/>
           <Route path="Registro" element={ <AnteSala />}/>
           <Route path="Medicos/Registro" element={<RegistrarMedicos/>}/>
+          <Route path="Medicos/Registro/Verificacion" element={<VerificacionMedicos/>}/>
         
         </Routes>
         </AuthProvider>

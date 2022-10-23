@@ -1,79 +1,68 @@
 import logopng from "../../imagenes/logovita.png";
-import "../../stylesheets/RegistroPaciente.css";
-import fotoregistro from "../../imagenes/pacientes/fotoregistro.png";
+import "../../stylesheets/LoginPaciente.css";
 import { useState } from "react";
 import { useAuth } from "../../context/authContext";
 import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import { Formik, Form  } from "formik";
+import { TextField } from "./TextField";
+import * as Yup from "yup";
 
 function LoginPaciente() {
     const {login} = useAuth();
-    const [user, setUser] = useState(
-        { 
-            email: "",
-            password: "",
-         });
-
-    const[error, setError] = useState();
     const navigate = useNavigate();
-    
-
-
-    const handleChange = ({ target: { name, value } }) =>  { 
-        setUser({...user, [name]  : value});     
-    };
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setError(" ");
-        try {
-            await login(user.email,user.password);
-            navigate("/Pacientes/HomePacientes");
-        } catch (error) {
-            setError(error.message);
-            
-        }
+    const handleSubmit =  ( values) => {
+      
+        
+       login(values.email,values.password);
+       navigate("/Pacientes/Home");
+       
        
      }; 
-
-    return<>
-    <div className="logoSeccion">
-        <img 
-            className="logo-registro" 
-            src={logopng}
-            alt="logo vita"/>
-
-    </div>
-    <div className="parent">
-    <div className="textosUsuario">
+    const validate = Yup.object({
         
+        email: Yup.string()
+          .email('Email inválido')
+          .required('El email es obligatorio'),
+        password: Yup.string()
+          .required('La contraseña es obligatoria'),
+       
+      })
+      return <>
+       <div className="logoSeccion">
+            <img 
+                className="logo-registro" 
+                src={logopng}
+                alt="logo vita"/>
+        </div>
+        <div className="form-login" >
+        <button><NavLink to ="/Medicos/Login"><span>¿Sos prestador de salud?</span></NavLink></button> 
 
-    </div>
-    <div className="formRegistro">
+        <Formik
+          initialValues={{
+            email: '',
+            password: '',
+          }}
+          validationSchema={validate}
+          onSubmit={ handleSubmit}
+        >
+          {formik => (
+            <div>
+             
+              <Form>
+               
+                <TextField label="Correo electrónico" name="email" type="email" />
+                <TextField label="Contraseña" name="password" type="password" />
+                <button className="btn btn-dark mt-3" type="submit">Ingresar</button>
+               
+              </Form>
+            </div>
+          )}
+        </Formik>
+        </div>
+        <NavLink to="/Registro"><span className= "linktoRegister">¿No tenes cuenta? Registrate</span></NavLink>
 
-    { error && <p>{error}</p>}
-
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="email">Email</label>
-            <input 
-                type= "email" 
-                name= "email" 
-                placeholder="mail@mail.com"
-                onChange={handleChange}/>
-            <label htmlFor="password">Contraseña</label>
-            <input 
-                type= "password" 
-                name="password" 
-                id="password" 
-                placeholder="******"
-                onChange={handleChange}/>
-
-            <button>Login</button>
-        </form>
-    </div>
-    </div>
-    
-    </>
+        </>
 }
-
 export default LoginPaciente;
 

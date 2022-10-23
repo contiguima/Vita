@@ -51,15 +51,28 @@ export function AuthProvider({ children }) {
             
         }
     };
+    const prevmedicos = (email, password) =>
+    {
 
-    const login = async (email, password) =>{ signInWithEmailAndPassword(auth, email, password)
+        try {
+            createUserWithEmailAndPassword(auth, email, password);
+            navigate("/Medicos/Registro/Verificacion");
+            
+        } catch (error) {
+            alert(error.message);
+            
+        }
+    };
+
+    const login = async (email, password) =>
+    { signInWithEmailAndPassword(auth, email, password)
     }
 
     useEffect (() => {
         console.log("AuthProvider loaded")
     } , [ ]  )
     return(
-        <authContext.Provider value = {{ signup, login, user }}>{children}</authContext.Provider>
+        <authContext.Provider value = {{ signup, login, user,prevmedicos }}>{children}</authContext.Provider>
     )
     
 };

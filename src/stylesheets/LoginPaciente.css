@@ -1,0 +1,93 @@
+.logo-registro{
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.form-login{
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+}
+.logoSeccion{
+    padding: 50px;
+}
+
+.textosUsuario
+{
+
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.prestador
+{
+    text-decoration: none;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left:200px ;
+}
+.linktoRegister{
+    color: black;
+    text-decoration: none;
+  }
+
+form
+  {
+   margin: auto;
+   padding: 15px;
+   background-color: #d9d9d9;
+   min-width: 300px;
+   box-sizing: border-box;
+   border-radius: 20px;
+   font-size: 16px;
+   color: #3e8fda;
+
+  }
+form label{
+	min-width:100px;
+	font-weight:bold;
+	display:inline-block;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    text-align: left;
+    align-items: left;
+    justify-content: left;
+
+}
+
+form input{
+	width:150px;
+	padding:3px 10px;
+	border:1px solid #f6f6f6;
+	border-radius:3px;
+	background-color:#f6f6f6;
+	margin:8px 0;
+	display:inline-block;
+}
+
+form p
+{
+	text-align: left;
+    margin-left:10px
+}
+
+form p span
+{
+	text-align: left;
+    color:#3e8fda
+}
+
+
+
+  
+
+
+

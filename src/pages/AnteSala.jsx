@@ -13,7 +13,7 @@ function AnteSala()
         </div>
         
         <div className="contenedor-botones">
-        <button> Soy médico</button>
+        <button> <NavLink to ="/Medicos/Registro"><span>Soy médico<span/></span></NavLink></button>
         <button><NavLink to ="/Pacientes/Registro"><span>Soy paciente<span/></span></NavLink></button>
             </div></>
     )

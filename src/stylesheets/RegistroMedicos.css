@@ -19,12 +19,12 @@
     padding: 50px;
 }
 
-.textosUsuario
+h1
 {
 
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    text-align: left;
+    padding:40px;
+  
 }
 
 .prestador
@@ -40,16 +40,5 @@ span{
     color: white;
     text-decoration: none;
   }
-
-p{
-    padding:5px;
-    font-size: 12px;
-  }
-
-
-
-
-  
-
 
 

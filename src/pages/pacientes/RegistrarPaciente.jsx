@@ -75,12 +75,17 @@ function RegistrarPaciente() {
                 <TextField label="Número de teléfono" name="phone" type="phone" />
                 <TextField label="Contraseña" name="password" type="password" />
                 <TextField label="Confirmar Contraseña" name="confirmPassword" type="password" />
+                <p>Al continuar, acepto los <u>Términos de uso</u> de Vita y reconozco que leí la <u>Política de Privacidad</u></p>        
                 <button className="btn btn-dark mt-3" type="submit">Registrarse</button>
-               
+                <p>¿Ya tenés una cuenta? <NavLink to ="/Pacientes/Login"><span>Iniciar sesión</span></NavLink></p>
+
               </Form>
+
             </div>
+            
           )}
         </Formik>
+        
         </div>
         </>
 }
