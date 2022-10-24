@@ -64,6 +64,9 @@ export function AuthProvider({ children }) {
         }
     };
 
+     
+
+
     const login = async (email, password) =>
     { signInWithEmailAndPassword(auth, email, password)
     }

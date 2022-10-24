@@ -16,8 +16,8 @@ import {AuthProvider} from "./context/authContext";
 import HomeGeneral from "./pages/HomeGeneral";
 import RegistrarMedicos from "./pages/medicos/RegistrarMedicos";
 import LayaoutRequireAuth  from './components/Layaout/LayaoutRequireAuth';"./components/Layaout/LayaoutRequireAuth";
-import NavbarPacientes from './components/NavbarPacientes';
-import { VerificacionMedicos } from './pages/medicos/VerificacionMedicos';
+import Navbar from './components/Navbar';
+import VerificacionMedicos from './pages/medicos/VerificacionMedicos';
 
 
 
@@ -26,7 +26,7 @@ function App() {
 
   return (
     <div className="App">
-      <NavbarPacientes/>
+      <Navbar/>
       <Router>
         <AuthProvider>
         <Routes>
