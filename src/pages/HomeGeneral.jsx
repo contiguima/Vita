@@ -2,7 +2,9 @@ import  promos  from "../imagenes/home/promos.png";
 import  logochico  from "../imagenes/home/logochico.png";
 import "../stylesheets/HomeGeneral.css";
 import { Noticia } from "../components/Noticia";
-function HomePrevioPacientes() {
+function HomeGeneral(props) {
+
+    //Previo hasta hacer validación  usamos logeado
     return<>
    
     <div className="motorBusqueda">
@@ -17,7 +19,9 @@ function HomePrevioPacientes() {
         src={promos}
     />
     </div>
-    <div className="botonera">
+    <div className={
+          props.logueado ? "botonera" : "empty"
+        }>
         <button>Búsqueda avanzada</button>
         <button>Administrá grupo familiar</button>
         <button>Mensajes</button>
@@ -66,4 +70,4 @@ function HomePrevioPacientes() {
     </>
 }
 
-export default HomePrevioPacientes;
+export default HomeGeneral;

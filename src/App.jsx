@@ -10,7 +10,6 @@ import {
 
 } from "react-router-dom";
 import LoginPacientes from "./pages/pacientes/LoginPacientes";
-import HomePacientes from "./pages/pacientes/HomePacientes";
 import RegistrarPaciente from "./pages/pacientes/RegistrarPaciente";
 import {AuthProvider} from "./context/authContext";
 import HomeGeneral from "./pages/HomeGeneral";
@@ -30,12 +29,14 @@ function App() {
       <Router>
         <AuthProvider>
         <Routes>
-          <Route path="/" element={ <HomeGeneral />}/>
+          <Route path="/" element={ <HomeGeneral
+          logueado= ""/>}/>
           <Route path="*" element={<>NOT FOUND</>}/>
           <Route path="Pacientes/Login" element={<LoginPacientes/>}/>
 
           <Route path="/" element={ <LayaoutRequireAuth/>}>
-            <Route path="Pacientes/Home" element={<HomePacientes/>}/>
+            <Route path="Pacientes/Home" element={<HomeGeneral
+            logueado="true"/>}/>
           </Route>
 
           <Route path="Pacientes/Registro" element={<RegistrarPaciente/>}/>
