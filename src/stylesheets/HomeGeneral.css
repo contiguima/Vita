@@ -83,6 +83,15 @@
     grid-row-gap: 0px;
     margin:20px;
 }
+@media screen and (max-width: 768px) {
+    .introComunidad{
+      display: block;
+    }
+    .introComunidad img{
+        height: 300px;
+        width: 300px;
+     }
+  }
 .introComunidad h2{
     font-size: 20px;
     line-height: 30px;
@@ -94,7 +103,8 @@
     color:#3e8fda;
 }
 .introComunidad img{
-   height: 400px;
+   max-height: 400px;
+   max-width: 500px;
 }
 .lineaAzul{
     background-color: #3e8fda;

@@ -1,5 +1,11 @@
 
-
+@media screen and (max-width: 768px) {
+  .logo-inicial{
+    padding-top: 100px;
+    width: 200px;;
+  }
+  
+}
 
   span{
     color: white;

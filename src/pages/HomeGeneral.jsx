@@ -8,6 +8,7 @@ function HomePrevioPacientes() {
     <div className="motorBusqueda">
         <h1>Encuentre al profesional que necesita. Más de <span>600 prestadores</span> de salud a su disposición</h1>
         <input className="motorBusqueda" type="text" placeholder="Buscar por especialidad, ubicación, centro ..."></input>
+        <button>Buscar</button>
     </div>
     <div className="promos">
     <img
@@ -60,6 +61,7 @@ function HomePrevioPacientes() {
         type="email" 
         placeholder="Dirección de email"
         htmlFor="email"></input>
+        <button>Suscribirse</button>
     </div>
     </>
 }

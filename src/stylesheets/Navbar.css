@@ -9,7 +9,7 @@
   position: fixed;
   padding: 0.5rem 0rem;
   background-color: #fff;
-  color: black;
+  color: #3e8fda;
   box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
   top:0;
   justify-content: flex-end;
@@ -85,14 +85,14 @@
       width: 100%;
       height: calc(100vh - 77px);
       background-color: white;
-      border-top: 1px solid black;
+      
     }
     .navigation-menu li {
       text-align: center;
       margin: 0;
     }
     .navigation-menu li a {
-      color: black;
+      color: #3e8fda;
       width: 100%;
       padding: 1.5rem 0;
     }
