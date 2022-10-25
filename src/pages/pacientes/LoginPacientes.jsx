@@ -17,7 +17,7 @@ function LoginPaciente() {
        login(values.email,values.password);
        navigate("/Pacientes/Home");
        
-       
+
      }; 
     const validate = Yup.object({
         
@@ -54,7 +54,7 @@ function LoginPaciente() {
                 <TextField label="Correo electrónico" name="email" type="email" />
                 <TextField label="Contraseña" name="password" type="password" />
                 <button className="btn btn-dark mt-3" type="submit">Ingresar</button>
-               
+              
               </Form>
             </div>
           )}

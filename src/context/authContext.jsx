@@ -59,7 +59,7 @@ export function AuthProvider({ children }) {
             navigate("/Medicos/Registro/Verificacion");
             
         } catch (error) {
-            alert(error.message);
+            
             
         }
     };
@@ -68,7 +68,13 @@ export function AuthProvider({ children }) {
 
 
     const login = async (email, password) =>
-    { signInWithEmailAndPassword(auth, email, password)
+    {   try {
+            signInWithEmailAndPassword(auth, email, password)
+        } catch (error) {
+            alert(error.message);
+        
+    }
+       
     }
 
     useEffect (() => {

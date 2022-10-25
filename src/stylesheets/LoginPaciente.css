@@ -1,20 +1,24 @@
+
+
 .logo-registro{
     height: 300px;
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding-top:60px;
     
 }
 
 .form-login{
-    padding: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
     align-items: center;
     justify-content: center;
     text-align: center;
     
 }
 .logoSeccion{
-    padding: 50px;
+    padding: 0px;
 }
 
 .textosUsuario
@@ -76,7 +80,8 @@ form input{
 form p
 {
 	text-align: left;
-    margin-left:10px
+    margin-left:10px;
+   
 }
 
 form p span

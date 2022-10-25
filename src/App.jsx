@@ -34,10 +34,10 @@ function App() {
           <Route path="*" element={<>NOT FOUND</>}/>
           <Route path="Pacientes/Login" element={<LoginPacientes/>}/>
 
-          <Route path="/" element={ <LayaoutRequireAuth/>}>
+          {/* <Route path="/" element={ <LayaoutRequireAuth/>}> */}
             <Route path="Pacientes/Home" element={<HomeGeneral
             logueado="true"/>}/>
-          </Route>
+          {/* </Route> */}
 
           <Route path="Pacientes/Registro" element={<RegistrarPaciente/>}/>
           <Route path="Registro" element={ <AnteSala />}/>

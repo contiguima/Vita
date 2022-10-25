@@ -44,6 +44,7 @@ function VerificacionMedicos() {
         </div>
         <div>
 
+    <div className="form-verificacion">
         <Formik
           initialValues={{
             title:"",
@@ -79,6 +80,7 @@ function VerificacionMedicos() {
           )}
         </Formik>
         </div>
+      </div>
         </>
 }
 

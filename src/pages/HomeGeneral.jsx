@@ -2,6 +2,7 @@ import  promos  from "../imagenes/home/promos.png";
 import  logochico  from "../imagenes/home/logochico.png";
 import "../stylesheets/HomeGeneral.css";
 import { Noticia } from "../components/Noticia";
+import { MedicosFavoritos } from "../components/MedicosFavoritos";
 function HomeGeneral(props) {
 
     //Previo hasta hacer validación  usamos logeado
@@ -26,6 +27,15 @@ function HomeGeneral(props) {
         <button>Administrá grupo familiar</button>
         <button>Mensajes</button>
     </div>
+    <div className={
+          props.logueado ? "favoritos" : "empty"
+        }>
+            <h1>Mis profesionales favoritos</h1>
+            <MedicosFavoritos
+            medico= "Harry Styles"
+            especialidad = "Cardiólogo"/>
+            <button>Agregar favoritos</button>
+        </div>
     <div className="comunidadVita">
         <h1 className="comunidadTitulo">Comunidad Vita</h1>
         <div className="introComunidad">

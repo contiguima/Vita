@@ -1,0 +1,57 @@
+.contenedor-medicos {
+    
+    min-height: 100px;
+    margin: 10px 10px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff; 
+    box-shadow: 1px 1px 1px 1px rgba(7, 119, 247, 0.952);
+  }
+  
+  .imagen-medicos {
+    max-height: 200px;
+    width: auto;
+    padding:10px
+    
+  }
+  @media screen and (max-width: 768px) {
+    
+    .contenedor-medicos {
+      width: 100%;
+      min-height: 250px;
+      margin: 10px 10px 50px;
+      display: block;
+      align-items: center;
+      justify-content: center;
+      background-color: #ffffff; 
+      box-shadow: 1px 1px 1px 1px rgba(7, 119, 247, 0.952);
+    }
+    .imagen-medicos {
+      height: 100px;
+      width: auto;
+      margin-top: 50px;
+      
+    }
+  }
+  .contenedor-texto-medicos {
+    text-align: center;
+    padding: 10px;
+    font-family: sans-serif;
+    font-weight: 200;
+    line-height: 1.5rem;
+  }
+  
+  .medico-especialidad {
+    font-size: 1.3rem;
+  }
+  
+  
+ 
+  
+  h1{
+    font-size: 1.7rem;
+    text-align: center;
+    color:#3e8fda;
+    padding-bottom:20px;
+  }
