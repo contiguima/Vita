@@ -41,6 +41,7 @@
 .linktoRegister{
     color: black;
     text-decoration: none;
+    padding: 20px;
   }
 
 form
@@ -48,13 +49,14 @@ form
    margin: auto;
    padding: 15px;
    background-color: #d9d9d9;
-   min-width: 300px;
+   max-width: 500px;
    box-sizing: border-box;
    border-radius: 20px;
    font-size: 16px;
    color: #3e8fda;
 
   }
+
 form label{
 	min-width:100px;
 	font-weight:bold;
@@ -68,13 +70,12 @@ form label{
 }
 
 form input{
-	width:150px;
+	width:200px;
 	padding:3px 10px;
 	border:1px solid #f6f6f6;
 	border-radius:3px;
-	background-color:#f6f6f6;
 	margin:8px 0;
-	display:inline-block;
+	
 }
 
 form p
@@ -84,10 +85,9 @@ form p
    
 }
 
-form p span
-{
-	text-align: left;
-    color:#3e8fda
+span{
+	margin-top: 20px;
+   
 }
 
 

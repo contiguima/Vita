@@ -13,7 +13,7 @@ function VerificacionMedicos() {
 
   /*Encontrar la forma de validar que no me suban archivos enormes*/
     const navigate = useNavigate();
-    const handleSubmit =  ( values) => {
+    const handleSubmit =  () => {
       
       navigate("/Medicos/Home");
        
@@ -72,7 +72,7 @@ function VerificacionMedicos() {
                 <TextField label="Especialidad" name="specialty" type="text" />
                 <p>Al continuar, acepto los <u>Términos de uso</u> de Vita y reconozco que leí la <u>Política de Privacidad</u></p>        
 
-                <button className="btn btn-dark mt-3" type="submit">Continuar</button>
+                <button className="btn btn-dark mt-3" type="submit">Registrar</button>
                 
                 <p>¿Ya tenés una cuenta? <NavLink to ="/Medicos/Login"><span>Iniciar sesión</span></NavLink></p>
               </Form>

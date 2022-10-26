@@ -11,7 +11,22 @@
     padding-left:100px;
     padding-right: 100px;
     padding-bottom: 30px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
 
+}
+
+form{
+    max-width: 700px;
+}
+
+form label{
+    font-size: 14px;
+    align-items: left;
+    justify-content: left;
+    text-align: left;
 }
 
 .parent {
@@ -35,15 +50,7 @@ h1
   
 }
 
-.prestador
-{
-    text-decoration: none;
-    color: white;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-left:200px ;
-}
+
 span{
     color: white;
     text-decoration: none;

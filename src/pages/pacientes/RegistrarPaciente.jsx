@@ -92,4 +92,3 @@ function RegistrarPaciente() {
 
 export default RegistrarPaciente;
 
- 

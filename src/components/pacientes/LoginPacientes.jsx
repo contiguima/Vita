@@ -5,13 +5,13 @@ import { useAuth } from "../../context/authContext";
 import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { Formik, Form  } from "formik";
-import { TextField } from "./TextField";
+import { TextField } from "../../pages/pacientes/TextField";
 import * as Yup from "yup";
 
-function LoginPaciente() {
+function LoginPacientes() {
     const {login} = useAuth();
     const navigate = useNavigate();
-    const handleSubmit =  ( values) => {
+    const handleSubmit =  (values) => {
       
         
        login(values.email,values.password);
@@ -36,7 +36,7 @@ function LoginPaciente() {
                 alt="logo vita"/>
         </div>
         <div className="form-login" >
-        <button><NavLink to ="/Medicos/Login"><span>¿Sos prestador de salud?</span></NavLink></button> 
+        
 
         <Formik
           initialValues={{
@@ -64,5 +64,4 @@ function LoginPaciente() {
 
         </>
 }
-export default LoginPaciente;
-
+export default LoginPacientes;

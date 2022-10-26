@@ -49,7 +49,7 @@ function Navbar()
             <a href="/">Mis documentos</a>
           </li>
           <li>
-            <a href="/Pacientes/Login">Inicia sesión/Registrate</a>
+            <a href="/Login">Inicia sesión/Registrate</a>
           </li>
         </ul>
       </div>
