@@ -2,10 +2,17 @@ import React from "react";
 import "../stylesheets/AnteSala.css";
 import logopng from "../imagenes/logovita.png";
 import { NavLink } from "react-router-dom";
+import  Navbar  from "../components/Navbar";
 function AnteSala()
 {
     return(
-        <><div className="contenedor-logo">
+        
+        <>
+        <Navbar
+        primerElemento="Ayuda"
+        primeraRuta= "/"/>
+        
+        <div className="contenedor-logo">
             <img 
             className="logo-inicial" 
             src={logopng}

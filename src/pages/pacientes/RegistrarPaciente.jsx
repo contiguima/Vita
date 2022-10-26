@@ -8,6 +8,7 @@ import { NavLink } from "react-router-dom";
 import { Formik, Form  } from "formik";
 import { TextField } from "./TextField";
 import * as Yup from "yup";
+import Navbar from "../../components/Navbar";
 
 function RegistrarPaciente() {
     const {signup} = useAuth();
@@ -38,6 +39,9 @@ function RegistrarPaciente() {
           .required('Confirm password is required'),
       })
       return <>
+      <Navbar
+      primerElemento = "Ayuda"
+      primeraRuta = "/"/>
        <div className="logoSeccion">
             <img 
                 className="logo-registro" 

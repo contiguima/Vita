@@ -3,10 +3,21 @@ import  logochico  from "../imagenes/home/logochico.png";
 import "../stylesheets/HomeGeneral.css";
 import { Noticia } from "../components/Noticia";
 import { MedicosFavoritos } from "../components/MedicosFavoritos";
+import Navbar from "../components/Navbar";
+
 function HomeGeneral(props) {
 
     //Previo hasta hacer validación  usamos logeado
     return<>
+    <Navbar
+    primerElemento = "Ayuda"
+    segundoElemento = {props.logueado ? "Mis Turnos" : "Inicia sesión/Registrate"}
+    segundaRuta = {props.logueado ? "/" : "/Login"}
+    tercerElemento = {props.logueado ? "Mis Documentos" : "" }
+    cuartoElemento = {props.logueado ? "Mi Cuenta" : "" }
+
+        
+    />
    
     <div className="motorBusqueda">
         <h1>Encuentre al profesional que necesita. Más de <span>600 prestadores</span> de salud a su disposición</h1>

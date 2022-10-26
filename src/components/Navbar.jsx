@@ -3,7 +3,7 @@ import "../stylesheets/Navbar.css"
 import logopng from "../imagenes/logovita.png";
 import { useState } from "react";
 
-function Navbar()
+function Navbar(props)
 {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   return (
@@ -40,16 +40,16 @@ function Navbar()
         }>
         <ul>
           <li>
-            <a href="/">Ayuda</a><i className="fas fa-user"></i>
+            <a href={props.primeraRuta}>{props.primerElemento}</a>
           </li>
           <li>
-            <a href="/">Mis turnos</a>
+            <a href={props.segundaRuta}>{props.segundoElemento}</a>
           </li>
           <li>
-            <a href="/">Mis documentos</a>
+            <a href={props.terceraRuta}>{props.tercerElemento}</a>
           </li>
           <li>
-            <a href="/Login">Inicia sesión/Registrate</a>
+            <a href={props.cuartaRuta}>{props.cuartoElemento}</a>
           </li>
         </ul>
       </div>

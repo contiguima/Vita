@@ -13,22 +13,29 @@ import Login from "./pages/Login";
 
 
 function App() {
+
+  const navPrevia = 
+  {
+    primerElemento: "Ayuda",
+    primeraRuta: "/"
+  }
   
+
 
   return (
     <div className="App">
-      <Navbar/>
+
       <Router>
         <AuthProvider>
         <Routes>
           <Route path="/" element={ <HomeGeneral
-          logueado= ""/>}/>
+          logueado= {false}/>}/>
           <Route path="*" element={<>NOT FOUND</>}/>
 
-          <Route path="/" element={ <LayaoutRequireAuth/>}> 
+          {/* <Route path="/" element={ <LayaoutRequireAuth/>}>  */}
             <Route path="Pacientes/Home" element={<HomeGeneral
-            logueado="true"/>}/>
-           </Route>
+            logueado={true}/>}/>
+           {/* </Route> */}
 
           <Route path="Pacientes/Registro" element={<RegistrarPaciente/>}/>
           <Route path="Registro" element={ <AnteSala />}/>
