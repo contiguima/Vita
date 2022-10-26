@@ -7,19 +7,13 @@ import {AuthProvider} from "./context/authContext";
 import HomeGeneral from "./pages/HomeGeneral";
 import RegistrarMedicos from "./pages/medicos/RegistrarMedicos";
 import LayaoutRequireAuth  from './components/Layaout/LayaoutRequireAuth';"./components/Layaout/LayaoutRequireAuth";
-import Navbar from './components/Navbar';
 import VerificacionMedicos from './pages/medicos/VerificacionMedicos';
 import Login from "./pages/Login";
+import HomeMedicos from './pages/medicos/HomeMedicos';
 
 
 function App() {
 
-  const navPrevia = 
-  {
-    primerElemento: "Ayuda",
-    primeraRuta: "/"
-  }
-  
 
 
   return (
@@ -36,6 +30,8 @@ function App() {
             <Route path="Pacientes/Home" element={<HomeGeneral
             logueado={true}/>}/>
            {/* </Route> */}
+
+           <Route path="Medicos/Home" element = {<HomeMedicos/>}></Route>
 
           <Route path="Pacientes/Registro" element={<RegistrarPaciente/>}/>
           <Route path="Registro" element={ <AnteSala />}/>

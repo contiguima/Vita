@@ -1,0 +1,26 @@
+.botonera-medicos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 0.3fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 0px;
+    padding: 20px;
+    }
+.botonera-medicos button
+{
+    background-color: azure;
+    color: black;
+}
+.botonera-medicos button:hover
+{
+    background-color: rgb(212, 212, 212);
+}
+
+.img-medicos{
+    padding-top:100px;
+}
+
+.imagenmedicos{
+    max-width: 100%;
+    max-height: 100%;
+}
