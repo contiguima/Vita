@@ -22,7 +22,8 @@ function HomeGeneral(props) {
    
     <div className="motorBusqueda">
         <h1>Encuentre al profesional que necesita. Más de <span>600 prestadores</span> de salud a su disposición</h1>
-        <button><NavLink  to ="/Pacientes/BuscarMedico"
+        <button><NavLink  to = {
+          props.logueado ? "/Pacientes/BuscarMedico" : "/Login"}
           style={{ textDecoration: "none", color: "black" }}>
             <span>Ver Médicos</span></NavLink>  </button>
           </div>

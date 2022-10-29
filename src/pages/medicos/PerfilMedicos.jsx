@@ -6,14 +6,23 @@ import { useAuth } from "../../context/authContext";
 import { useFirestore } from "../../hooks/useFirestore";
 import { useEffect, useState } from "react";
 import { auth } from "../../firebase";
+import  iconopersona from "../../imagenes/iconopersona.png";
+import { Formik, Form  } from "formik";
+import { TextField } from "../pacientes/TextField";
+
 
 
 
 function PerfilMedicos() { 
 
     const {userData, user} = useAuth();
-    const {medicos, getAllMedicos} = useFirestore();
+    const {medicos, getAllMedicos, updatePrecioMedicos} = useFirestore();
     const [honorarios, setHonorarios] = useState("");
+
+    const handleSubmit =  (values) => {
+      console.log(values.honorarios);
+      updatePrecioMedicos(values.honorarios)
+      }; 
 
     let arrayMedicos = [];
 
@@ -48,24 +57,47 @@ function PerfilMedicos() {
         </Container>
         <div className="datos-medico">
             <h2>Mis datos</h2>
+
             <br></br>
             { arrayMedicos.map((item) => (
-                <div  key={item.id}>
+            <div  key={item.id}>
+                <img
+                src={iconopersona}
+                alt='Foto del medico'/>
                 <h3>Doctor { item.displayName} { item.apellido}</h3>
-                <h3> <u>{ item.especialidad}</u></h3>
+               
+                <h5>E-mail: {userData.email} </h5>
+                <br></br>
+                <br></br>
+                <div>
+                <h2>Días y horarios de atención</h2>
+
+
+                <div className= "botonera">Precio de la consulta: {item.honorarios ? 
+                <h4>{item.honorarios}</h4>: "Todavía no elegiste tu precio"}</div>
                 </div>
+            </div>
 
             )) }
-            <h5>E-mail: {userData.email} </h5>
-            <h2>Días y horarios de atención</h2>
-            <div className="datos=atencion">
-
+            <br></br>
+            <br></br>
+            <Formik
+          initialValues={{
+            honorarios: ''
+          }}
+          onSubmit={ handleSubmit}
+        >
+          {formik => (
+            <div>
+             
+              <Form>
+                <h3>Controlá tus honorarios</h3>
+                <TextField label="Honorarios" name="honorarios" type="text" />
+                <button className="btn btn-dark mt-3" type="submit">Guardar</button>
+              </Form>
             </div>
-            <h2>Precio de la consulta: {honorarios ? "precio" : "Todavía no elegiste tu precio"}</h2>
-            <form>
-                <input type="text"></input><button type="submit">Guardar honorarios</button>
-
-            </form>
+          )}
+        </Formik>
         </div>
 
         {/* El perfil debe tener

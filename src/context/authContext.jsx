@@ -82,7 +82,7 @@ export function AuthProvider({ children }) {
             console.log(error);
           }
     };
-    const prevmedicos = async (email, password, nombre, apellido, especialidad) =>
+    const prevmedicos = async (email, password, nombre, apellido, especialidad, honorarios) =>
     {
 
        
@@ -104,6 +104,15 @@ export function AuthProvider({ children }) {
                 apellido: apellido,
                 photoURL: user.photoURL,
                 especialidad : especialidad,
+                honorarios: "",
+                atencion: [
+                  {dia1: "", horarioEntrada1: "", horarioSalida1: ""},
+                  {dia2: "", horarioEntrada2: "", horarioSalida2: ""},
+                  {dia3: "", horarioEntrada3: "", horarioSalida3: ""},
+                  {dia4: "", horarioEntrada4: "", horarioSalida4: ""},
+                  {dia5: "", horarioEntrada5: "", horarioSalida5: ""},
+                ]
+                
               });
               setUser(true);
               setUserMedicoData({
@@ -112,7 +121,9 @@ export function AuthProvider({ children }) {
                 displayName: nombre,
                 apellido: apellido,
                 especialidad : especialidad,
+                honorarios: "",
                 photoURL: user.photoURL,
+                
               });
               navigate("/Medicos/Registro/Verificacion");
            
