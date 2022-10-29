@@ -15,9 +15,9 @@ function RegistrarMedicos() {
     const navigate = useNavigate();
     const handleSubmit =  ( values) => {
       
-        
-       prevmedicos(values.email,values.password);
-       //navigate("/Pacientes/Home");
+       console.log(values.email,values.password, values.firstName, values.lastName, values.especialidad); 
+       prevmedicos(values.email,values.password, values.firstName, values.lastName, values.especialidad);
+       
        
        
      }; 
@@ -28,6 +28,9 @@ function RegistrarMedicos() {
         lastName: Yup.string()
           .max(20, 'Must be 20 characters or less')
           .required('Required'),
+        especialidad: Yup.string()
+          .max(20, 'Must be 20 characters or less')
+          .required('Required'),  
         email: Yup.string()
           .email('Email is invalid')
           .required('Email is required'),
@@ -62,7 +65,8 @@ function RegistrarMedicos() {
             lastName: '',
             email: '',
             password: '',
-            confirmPassword: ''
+            confirmPassword: '',
+            especialidad: ''
           }}
           validationSchema={validate}
           onSubmit={ handleSubmit}
@@ -73,6 +77,7 @@ function RegistrarMedicos() {
               <Form>
                 <TextField label="Nombre" name="firstName" type="text" />
                 <TextField label="Apellido" name="lastName" type="text" />
+                <TextField label="Especialidad" name="especialidad" type="text" />
                 <TextField label="Correo electrónico" name="email" type="email" />
                 <TextField label="Número de teléfono" name="phone" type="phone" />
                 <TextField label="Contraseña" name="password" type="password" />
@@ -81,7 +86,7 @@ function RegistrarMedicos() {
 
                 <button className="btn btn-dark mt-3" type="submit">Continuar</button>
                 
-                <p>¿Ya tenés una cuenta? <NavLink to ="/Medicos/Login"><span>Iniciar sesión</span></NavLink></p>
+                <p>¿Ya tenés una cuenta? <NavLink to ="/Login"><span>Iniciar sesión</span></NavLink></p>
               </Form>
             </div>
           )}

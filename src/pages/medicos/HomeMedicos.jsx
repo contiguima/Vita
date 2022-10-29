@@ -5,9 +5,11 @@ import homemedicos from "../../imagenes/medicos/homemedicos.jpg";
 function HomeMedicos ()
 {
     return<> 
-        <Navbar
+       <Navbar
         primerElemento = "Perfil"
+        primeraRuta= "/Medicos/Perfil"
         segundoElemento = "Turnos"
+        segundaRuta= "/Medicos/Turnos"
         tercerElemento = "Cartera"
         cuartoElemento = "Eventos"/>
         <div className="img-medicos">

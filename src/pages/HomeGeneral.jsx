@@ -4,6 +4,7 @@ import "../stylesheets/HomeGeneral.css";
 import { Noticia } from "../components/Noticia";
 import { MedicosFavoritos } from "../components/MedicosFavoritos";
 import Navbar from "../components/Navbar";
+import { NavLink } from "react-router-dom";
 
 function HomeGeneral(props) {
 
@@ -21,9 +22,10 @@ function HomeGeneral(props) {
    
     <div className="motorBusqueda">
         <h1>Encuentre al profesional que necesita. Más de <span>600 prestadores</span> de salud a su disposición</h1>
-        <input className="motorBusqueda" type="text" placeholder="Buscar por especialidad, ubicación, centro ..."></input>
-        <button>Buscar</button>
-    </div>
+        <button><NavLink  to ="/Pacientes/BuscarMedico"
+          style={{ textDecoration: "none", color: "black" }}>
+            <span>Ver Médicos</span></NavLink>  </button>
+          </div>
     <div className="promos">
     <img
         className="imagenpromos"

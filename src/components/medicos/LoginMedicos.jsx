@@ -9,6 +9,7 @@ import { TextField } from "../../pages/pacientes/TextField";
 import * as Yup from "yup";
 
 function LoginMedicos() {
+
     const {login} = useAuth();
     const navigate = useNavigate();
     const handleSubmit =  (values) => {
@@ -36,7 +37,7 @@ function LoginMedicos() {
                 alt="logo vita"/>
         </div>
         <div className="form-login" >
-        
+        <h1 style={{ textAlign: "center" }}>Médicos</h1>
 
         <Formik
           initialValues={{

@@ -15,8 +15,8 @@ function RegistrarPaciente() {
     const navigate = useNavigate();
     const handleSubmit =  ( values) => {
       
-        
-       signup(values.email,values.password);
+       console.log(values.email, values.password, values.firstName);
+       signup(values.email,values.password, values.firstName);
        //navigate("/Pacientes/Home");
        
        

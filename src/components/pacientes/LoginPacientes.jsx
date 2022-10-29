@@ -37,6 +37,7 @@ function LoginPacientes() {
         </div>
         <div className="form-login" >
         
+        <h1 style={{ textAlign: "center" }}>Pacientes</h1>
 
         <Formik
           initialValues={{

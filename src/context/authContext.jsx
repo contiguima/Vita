@@ -3,11 +3,14 @@ import {
     createUserWithEmailAndPassword, 
     signInWithEmailAndPassword,
     onAuthStateChanged } from "firebase/auth";
-import { auth } from "../firebase";
+import { auth, db } from "../firebase";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { setDoc, doc, getDoc } from "firebase/firestore/lite";
+
 
 export const authContext = createContext();
+
 
 export const useAuth = () => {
     const context = useContext(authContext)
@@ -19,6 +22,10 @@ export function AuthProvider({ children }) {
     
     const [user, setUser] = useState(false);
     const [userData, setUserData] = useState({});
+    //Pacientes
+    const [userPacienteData, setUserPacienteData] = useState({});
+    //Medicos
+    const [userMedicoData, setUserMedicoData] = useState({});
     const navigate = useNavigate();
     
   
@@ -31,6 +38,7 @@ export function AuthProvider({ children }) {
             uid: user.uid,
             displayName: user.displayName,
             photoURL: user.photoURL,
+           
           });
         } else {
           setUser(false);
@@ -39,29 +47,79 @@ export function AuthProvider({ children }) {
       });
     }, [user]);
 
-    const signup = (email, password) =>
+    //Pacientes
+    const signup = async (email, password, nombre) =>
     {
 
         try {
-            createUserWithEmailAndPassword(auth, email, password);
-            navigate("/Pacientes/Home");
-            
-        } catch (error) {
-            alert(error.message);
-            
-        }
+            const { user } = await createUserWithEmailAndPassword(
+              auth,
+              email,
+              password
+            );
+            const docRef = doc(db, "pacientes", user.uid);
+            const docSpan = await getDoc(docRef);
+            if (docSpan.exists()) {
+              setUserPacienteData({ ...docSpan.data() });
+            } else {
+              await setDoc(docRef, {
+                email: user.email,
+                uid: user.uid,
+                displayName: nombre,
+                photoURL: user.photoURL,
+              });
+              setUser(true);
+              setUserPacienteData({
+                email: user.email,
+                uid: user.uid,
+                displayName: nombre,
+                photoURL: user.photoURL,
+              });
+              navigate("/Pacientes/Home");
+           
+            }
+          } catch (error) {
+            console.log(error);
+          }
     };
-    const prevmedicos = (email, password) =>
+    const prevmedicos = async (email, password, nombre, apellido, especialidad) =>
     {
 
+       
         try {
-            createUserWithEmailAndPassword(auth, email, password);
-            navigate("/Medicos/Registro/Verificacion");
-            
-        } catch (error) {
-            
-            
-        }
+            const { user } = await createUserWithEmailAndPassword(
+              auth,
+              email,
+              password
+            );
+            const docRef = doc(db, "medicos", user.uid);
+            const docSpan = await getDoc(docRef);
+            if (docSpan.exists()) {
+              setUserMedicoData({ ...docSpan.data() });
+            } else {
+              await setDoc(docRef, {
+                email: user.email,
+                uid: user.uid,
+                displayName: nombre,
+                apellido: apellido,
+                photoURL: user.photoURL,
+                especialidad : especialidad,
+              });
+              setUser(true);
+              setUserMedicoData({
+                email: user.email,
+                uid: user.uid,
+                displayName: nombre,
+                apellido: apellido,
+                especialidad : especialidad,
+                photoURL: user.photoURL,
+              });
+              navigate("/Medicos/Registro/Verificacion");
+           
+            }
+          } catch (error) {
+            console.log(error);
+          }
     };
 
      
@@ -81,7 +139,7 @@ export function AuthProvider({ children }) {
         console.log("AuthProvider loaded")
     } , [ ]  )
     return(
-        <authContext.Provider value = {{ signup, login, user,prevmedicos }}>{children}</authContext.Provider>
+        <authContext.Provider value = {{ signup, login, user,prevmedicos, userData }}>{children}</authContext.Provider>
     )
     
 };

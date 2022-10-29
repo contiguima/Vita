@@ -1,12 +1,12 @@
 import { useContext } from "react";
-import { useAuth } from "../../context/authContext";
+import { authContext, useAuth } from "../../context/authContext";
 import { Navigate, Outlet } from "react-router-dom";
 
 const LayaoutRequireAuth = () => {
-  const { user } = useAuth();
+  const { user } = useContext(authContext);
 
   if (!user) {
-    return <Navigate to="/Registro" />;
+    return <Navigate to="/Login" />;
   }
   return (
     <div>

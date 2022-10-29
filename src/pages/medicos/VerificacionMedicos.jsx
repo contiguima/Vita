@@ -20,20 +20,8 @@ function VerificacionMedicos() {
        
      }; 
     const validate = Yup.object({
-        title: Yup.string()
-          .required("Obligatorio"),
-        certifspecialty: Yup.string()
-          .required("Obligatorio"),
-        curriculum: Yup.string()
-          .required("Obligatorio"),
-        dni: Yup.string()
-          .required("Obligatorio"),
-        passport: Yup.string()
-          .required("Obligatorio"),
-        matric: Yup.string()
-          .required("Obligatorio"),
-        specialty: Yup.string()
-          .required("Obligatorio"),     
+        
+            
       })
       return <>
        <div className="logoSeccion">
@@ -53,7 +41,7 @@ function VerificacionMedicos() {
             dni:"",
             passport:"",
             matric:"",
-            specialty:"",
+        
 
           }}
           validationSchema={validate}
@@ -69,7 +57,6 @@ function VerificacionMedicos() {
                 <TextField label="Documento de Identidad" name="dni" type="file" />
                 <TextField label="Pasaporte o Licencia" name="passport" type="file" />
                 <TextField label="Numero de matricula" name="matric" type="number" />
-                <TextField label="Especialidad" name="specialty" type="text" />
                 <p>Al continuar, acepto los <u>Términos de uso</u> de Vita y reconozco que leí la <u>Política de Privacidad</u></p>        
 
                 <button className="btn btn-dark mt-3" type="submit">Registrar</button>
